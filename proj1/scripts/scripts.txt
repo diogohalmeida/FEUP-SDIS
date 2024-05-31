@@ -1,0 +1,20 @@
+CORRER DENTRO DA PASTA BUILD
+PEERS
+../../scripts/peer.sh 1.1 peer0 0 224.0.0.15 8001 224.0.0.16 8002 224.0.0.17 8003
+../../scripts/peer.sh 1.1 peer1 1 224.0.0.15 8001 224.0.0.16 8002 224.0.0.17 8003
+../../scripts/peer.sh 1.1 peer2 2 224.0.0.15 8001 224.0.0.16 8002 224.0.0.17 8003
+../../scripts/peer.sh 1.1 peer3 3 224.0.0.15 8001 224.0.0.16 8002 224.0.0.17 8003
+../../scripts/peer.sh 1.1 peer4 4 224.0.0.15 8001 224.0.0.16 8002 224.0.0.17 8003
+
+CLEANUP
+../../scripts/cleanup.sh 0
+
+TEST
+../../scripts/test.sh peer0 BACKUP ../test/admin.png 3
+
+CORRER DENTRO DA PASTA SRC
+COMPILE
+../scripts/compile.sh
+
+MCASTSNOOPER
+java -jar McastSnooper.jar 224.0.0.15:8001 224.0.0.16:8002 224.0.0.17:8003

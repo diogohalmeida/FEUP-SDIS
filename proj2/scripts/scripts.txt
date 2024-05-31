@@ -1,0 +1,13 @@
+CORRER DENTRO DA PASTA BUILD
+PEERS
+../../scripts/peer.sh 1 localhost 8001 localhost 8001
+
+CLEANUP
+../../scripts/cleanup.sh 0
+
+TEST
+../../scripts/test.sh peer0 BACKUP ../test/admin.png 3
+
+CORRER DENTRO DA PASTA SRC
+COMPILE
+../scripts/compile.sh
